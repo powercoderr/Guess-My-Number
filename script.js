@@ -1,6 +1,6 @@
 'use strict';
 
-let number = 5;
+let number = Math.round(Math.random() * 10);
 let highScore = 0;
 let score = 20;
 
