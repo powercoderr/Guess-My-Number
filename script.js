@@ -52,8 +52,8 @@ const startAgain = function () {
   document.querySelector('.guess').value = '';
   document.querySelector('.message').textContent = 'Start guessing...';
 
-  document.querySelector('body').style = 'background-color:#222;';
-  document.querySelector('.check').style = 'display:inline-block;';
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.check').style.display = 'inline-block';
 };
 
 document.querySelector('.again').addEventListener('click', startAgain);
