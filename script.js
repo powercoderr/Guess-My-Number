@@ -19,9 +19,10 @@ const checkAnswer = function () {
   }
 
   if (answer === number) {
+    if (answer > highScore) highScore = answer;
     document.querySelector('.message').textContent = `Correct Number ...`;
     document.querySelector('.number').textContent = answer;
-    document.querySelector('.highscore').textContent = answer;
+    document.querySelector('.highscore').textContent = highScore;
     document.querySelector('body').style.backgroundColor = 'green';
     document.querySelector('.check').style.display = 'none';
     return;
