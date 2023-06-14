@@ -22,8 +22,8 @@ const checkAnswer = function () {
     document.querySelector('.message').textContent = `Correct Number ...`;
     document.querySelector('.number').textContent = answer;
     document.querySelector('.highscore').textContent = answer;
-    document.querySelector('body').style = 'background-color:green;';
-    document.querySelector('.check').style = 'display:none;';
+    document.querySelector('body').style.backgroundColor = 'green';
+    document.querySelector('.check').style.display = 'none';
     return;
   }
 
@@ -33,13 +33,13 @@ const checkAnswer = function () {
   if (answer < number) message += 'To Low ...';
   if (score === 0) {
     message = "Oops. Your chance has run out. Let's try again ...";
-    document.querySelector('.check').style = 'display:none;';
+    document.querySelector('.check').style.display = 'none';
   }
 
   document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
   document.querySelector('.message').textContent = message;
-  document.querySelector('body').style = 'background-color:#222;';
+  document.querySelector('body').style.backgroundColor = '#222';
 };
 
 const startAgain = function () {
