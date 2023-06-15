@@ -20,9 +20,10 @@ const checkAnswer = function () {
 
   if (answer === number) {
     if (answer > highScore) highScore = answer;
-    document.querySelector('.message').textContent = `Correct Number ...`;
-    document.querySelector('.number').textContent = answer;
-    document.querySelector('.highscore').textContent = highScore;
+    changeElementText('.message', 'Correct Number ...');
+    changeElementText('.number', answer);
+    changeElementText('.highscore', highScore);
+
     document.querySelector('body').style.backgroundColor = 'green';
     document.querySelector('.check').style.display = 'none';
     return;
@@ -37,9 +38,9 @@ const checkAnswer = function () {
     document.querySelector('.check').style.display = 'none';
   }
 
-  document.querySelector('.score').textContent = score;
-  document.querySelector('.number').textContent = '?';
-  document.querySelector('.message').textContent = message;
+  changeElementText('.score', score);
+  changeElementText('.number', '?');
+  changeElementText('.message', message);
   document.querySelector('body').style.backgroundColor = '#222';
 };
 
@@ -48,13 +49,16 @@ const startAgain = function () {
   score = 20;
   console.log(number);
 
-  document.querySelector('.number').textContent = '?';
-  document.querySelector('.score').textContent = score;
+  changeElementText('.number', '?');
+  changeElementText('.score', score);
+  changeElementText('.message', 'Start guessing ...');
   document.querySelector('.guess').value = '';
-  document.querySelector('.message').textContent = 'Start guessing...';
-
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.check').style.display = 'inline-block';
+};
+
+const changeElementText = function (element, text) {
+  document.querySelector(element).textContent = text;
 };
 
 document.querySelector('.again').addEventListener('click', startAgain);
